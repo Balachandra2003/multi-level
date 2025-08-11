@@ -1,0 +1,36 @@
+image: python:3.10
+
+variables:
+  GITHUB_USERNAME: "Balachandra2003"
+
+stages:
+  - build
+  #- test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - pip install --upgrade pip
+    - echo "✅ Build completed"
+
+#test-job:
+  #stage: test
+  #script:
+    #- python3 example.py   # or main.py if renamed
+
+deploy-job:
+  stage: deploy
+  script:
+    - mkdir deploy_dir
+    - cp -r .circleci file1.py deploy_dir/
+    - cd deploy_dir
+    - git init
+    - git config --global user.email "balareddy598@gmail.com"
+    - git config --global user.name "Balachandra2003"
+    - git remote add origin https://$GITHUB_USERNAME:$GH_TOKEN@github.com/$GITHUB_USERNAME/multi-level.git 
+    - git add .
+    - git commit -m "commit from GitLab CI"
+    - git branch -M main
+    - git push -u origin main --force
+    - echo "Deployed in GitHub"
