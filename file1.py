@@ -10,7 +10,7 @@ project_data = [
         "project_name": "Alpha",
         "total_bugs": 22,
         "solved_bugs": 10,
-        "progress": 40
+        "progress": 42
     },
     {
         "project_id": 2,
