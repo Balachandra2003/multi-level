@@ -8,8 +8,8 @@ project_data = [
     {
         "project_id": 1,
         "project_name": "Alpha",
-        "total_bugs": 22,
-        "solved_bugs": 10,
+        "total_bugs": 30,
+        "solved_bugs": 15,
         "progress": 40
     },
     {
